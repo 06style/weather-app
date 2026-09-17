@@ -88,22 +88,22 @@ week4-weather-app/
 ## 📸 Screenshots
 
 ### 1. Main Weather Dashboard
-![Main Dashboard](assets/images/01-main-dashboard.png)
+![Main Dashboard](assets//icons/images/01-main-dashboard.png)
 
 ### 2.  City Weather Report
-![City Weather Report](assets/images/city.png)
+![City Weather Report](assets/icons/images/city.png)
 
 ### 3. Light Theme
-![Dark Theme](assets/images/light-theme.png)
+![Dark Theme](assets/icons/images/light-theme.png)
 
 ### 4.  Favourite City & Hourly Forecast
 ![Favourite City & Hourly Forecast ](assets/icons/images/fav-hourly-forecast.png)
 
 ### 5. 5-Day Forecast
-![5-Day Forecast](assets/images/assets/icons/images/5-day-Forecast.png)
+![5-Day Forecast](assets/icons/images/5-day-Forecast.png)
 
 ### 6. Location Detection
-![Location Detection](assets/images/assets/icons/images/use-my-location.png.png)
+![Location Detection](assets/icons/images/use-my-location.png)
 
 
 

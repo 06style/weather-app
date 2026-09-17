@@ -2,6 +2,10 @@
 
 A responsive weather application that fetches real-time weather information using the OpenWeatherMap API. Users can search for cities, view current weather conditions and forecasts, switch temperature units, use their current location, save favorite cities, and switch between light and dark themes.
 
+## 🌐 Live Demo
+
+[View WeatherPulse Live](https://06style.github.io/weather-app/)
+
 ## Project Overview
 
 WeatherPulse is a frontend weather dashboard built using HTML, CSS, and JavaScript. It integrates REST APIs and asynchronous JavaScript to retrieve and display real-time weather data.
@@ -80,3 +84,26 @@ week4-weather-app/
 ├── .env.example
 ├── .gitignore
 └── README.md
+```
+## 📸 Screenshots
+
+### 1. Main Weather Dashboard
+![Main Dashboard](assets/images/01-main-dashboard.png)
+
+### 2.  City Weather Report
+![City Weather Report](assets/images/city.png)
+
+### 3. Light Theme
+![Dark Theme](assets/images/light-theme.png)
+
+### 4.  Favourite City & Hourly Forecast
+![Favourite City & Hourly Forecast ](assets/icons/images/fav-hourly-forecast.png)
+
+### 5. 5-Day Forecast
+![5-Day Forecast](assets/images/assets/icons/images/5-day-Forecast.png)
+
+### 6. Location Detection
+![Location Detection](assets/images/assets/icons/images/use-my-location.png.png)
+
+
+

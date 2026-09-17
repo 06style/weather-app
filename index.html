@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherPulse | Weather Dashboard</title>
+
+    <meta
+        name="description"
+        content="WeatherPulse is a responsive weather application providing current weather and 5-day forecasts."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Dynamic Weather Background -->
+<div class="weather-background" id="weatherBackground" aria-hidden="true">
+    <div class="weather-sky"></div>
+    <div class="weather-sun"></div>
+    <div class="weather-moon"></div>
+    <div class="weather-cloud cloud-one"></div>
+    <div class="weather-cloud cloud-two"></div>
+    <div class="weather-rain"></div>
+    <div class="weather-snow"></div>
+    <div class="weather-lightning"></div>
+</div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">☁</span>
+                <span>WeatherPulse</span>
+            </a>
+
+            <div class="header-actions">
+
+                <button
+                    id="unitToggle"
+                    class="unit-toggle"
+                    type="button"
+                    aria-label="Toggle temperature unit"
+                >
+                    °C
+                </button>
+
+                <button
+                    id="themeToggle"
+                    class="icon-button"
+                    type="button"
+                    aria-label="Toggle dark mode"
+                >
+                    🌙
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- HERO / SEARCH -->
+
+        <section class="hero">
+            <div class="container hero-content">
+
+                <p class="eyebrow">LIVE WEATHER DASHBOARD</p>
+
+                <h1>
+                    How's the weather
+                    <span>today?</span>
+                </h1>
+
+                <p class="hero-description">
+                    Search any city to get real-time weather conditions
+                    and a 5-day forecast.
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <form id="searchForm" class="search-form">
+
+                    <div class="search-box">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="text"
+                            id="cityInput"
+                            placeholder="Search city..."
+                            autocomplete="off"
+                            aria-label="Search city"
+                        >
+
+                        <button
+                            type="submit"
+                            class="search-button"
+                            aria-label="Search weather"
+                        >
+                            Search
+                        </button>
+
+                    </div>
+
+                    <!-- Autocomplete suggestions -->
+                    <div
+                        id="suggestions"
+                        class="suggestions"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+
+                <!-- LOCATION -->
+
+                <button
+                    id="locationButton"
+                    class="location-button"
+                    type="button"
+                >
+                    📍 Use my location
+                </button>
+
+                <button type="button" class="refresh-button" id="refreshButton">
+    🔄 Refresh Weather
+</button>
+
+            </div>
+        </section>
+
+
+        <!-- ================= STATUS ================= -->
+
+        <section class="status-section">
+
+            <div
+                id="loading"
+                class="status-message loading"
+                hidden
+            >
+                <div class="spinner"></div>
+                <span>Getting weather data...</span>
+            </div>
+
+
+            <div
+                id="errorMessage"
+                class="status-message error"
+                hidden
+            >
+                <span>⚠️</span>
+                <p id="errorText">
+                    Unable to load weather data.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= WEATHER CONTENT ================= -->
+
+        <section
+            id="weatherContent"
+            class="weather-section container"
+        >
+
+            <!-- CURRENT WEATHER -->
+
+            <div class="current-weather-card">
+
+                <div class="weather-card-top">
+
+                    <div>
+
+                        <p class="location-label">
+                            CURRENT LOCATION
+                        </p>
+
+                        <h2 id="locationName">
+                            Search for a city
+                        </h2>
+
+                        <p id="lastUpdated" class="updated-time">
+                            —
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="favoriteButton"
+                        class="favorite-button"
+                        type="button"
+                        aria-label="Add city to favorites"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="current-weather-main">
+
+                    <div class="temperature-area">
+
+                        <div
+                            id="weatherIcon"
+                            class="weather-icon"
+                        >
+                            ☀️
+                        </div>
+
+                        <div>
+
+                            <div class="temperature">
+                                <span id="temperature">--</span>
+                                <span class="degree">°</span>
+                            </div>
+
+                            <p id="weatherCondition">
+                                —
+                            </p>
+
+                            <p class="feels-like">
+                                Feels like
+                                <strong id="feelsLike">--</strong>°
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WEATHER DETAILS -->
+
+                    <div class="weather-details">
+
+                        <div class="detail-item">
+
+                            <span class="detail-icon">💧</span>
+
+                            <div>
+                                <span class="detail-label">
+                                    Humidity
+                                </span>
+
+                                <strong id="humidity">
+                                    --%
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-icon">💨</span>
+
+                            <div>
+                                <span class="detail-label">
+                                    Wind
+                                </span>
+
+                                <strong id="wind">
+                                    -- km/h
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-icon">📊</span>
+
+                            <div>
+                                <span class="detail-label">
+                                    Pressure
+                                </span>
+
+                                <strong id="pressure">
+                                    -- hPa
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-icon">👁️</span>
+
+                            <div>
+                                <span class="detail-label">
+                                    Visibility
+                                </span>
+
+                                <strong id="visibility">
+                                    -- km
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="detail-item">
+
+    <span class="detail-icon">🌅</span>
+
+    <div>
+        <span class="detail-label">
+            Sunrise
+        </span>
+
+        <strong id="sunrise">
+            --
+        </strong>
+    </div>
+
+</div>
+
+
+<div class="detail-item">
+
+    <span class="detail-icon">🌇</span>
+
+    <div>
+        <span class="detail-label">
+            Sunset
+        </span>
+
+        <strong id="sunset">
+            --
+        </strong>
+    </div>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FAVORITES ================= -->
+
+            <div class="favorites-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">QUICK ACCESS</p>
+                        <h2>Favorite Cities</h2>
+                    </div>
+
+                </div>
+
+                <div
+                    id="favoritesList"
+                    class="favorites-list"
+                >
+                    <p class="empty-favorites">
+                        Your favorite cities will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- HOURLY FORECAST -->
+<section class="hourly-section" aria-labelledby="hourlyTitle">
+    <div class="section-heading">
+        <div>
+            <p class="section-label">NEXT HOURS</p>
+            <h2 id="hourlyTitle">Hourly Forecast</h2>
+        </div>
+    </div>
+
+    <div class="hourly-list" id="hourlyList">
+        <!-- Hourly forecast cards will appear here -->
+    </div>
+</section>
+
+
+            <!-- ================= FORECAST ================= -->
+
+            <div class="forecast-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">UPCOMING WEATHER</p>
+                        <h2>5-Day Forecast</h2>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="forecastList"
+                    class="forecast-grid"
+                >
+
+                    <!-- Forecast cards will be generated by JavaScript -->
+
+                    <div class="forecast-placeholder">
+                        Search for a city to view the forecast.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <strong>WeatherPulse</strong>
+                <p>
+                    Real-time weather information made simple.
+                </p>
+            </div>
+
+            <p>
+                Powered by OpenWeatherMap API
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/weatherService.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

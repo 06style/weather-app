@@ -1,0 +1,358 @@
+/* =========================================
+   WEATHERPULSE - RESPONSIVE STYLES
+   File: responsive.css
+   Responsibility: Tablet + Mobile Layouts
+   ========================================= */
+
+
+/* =========================================
+   TABLET
+   769px - 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+  .container {
+    width: min(92%, 1100px);
+  }
+
+  .header-content {
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 55px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .current-weather {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-main {
+    padding: 28px;
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .favorites-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   Up to 768px
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: min(92%, 680px);
+  }
+
+
+  /* ---------- Header ---------- */
+
+  .header-content {
+    min-height: 70px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .unit-toggle,
+  .theme-toggle {
+    padding: 8px 10px;
+  }
+
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 42px 0 30px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .location-button {
+    width: 100%;
+  }
+
+
+  /* ---------- Suggestions ---------- */
+
+  .suggestions {
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+
+  /* ---------- Current Weather ---------- */
+
+  .current-weather {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .weather-main {
+    padding: 24px 20px;
+  }
+
+  .weather-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .weather-location {
+    max-width: 100%;
+  }
+
+  .weather-temperature {
+    font-size: 58px;
+  }
+
+  .weather-condition {
+    font-size: 18px;
+  }
+
+
+  /* ---------- Weather Details ---------- */
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .weather-detail {
+    padding: 15px 12px;
+  }
+
+
+  /* ---------- Favorites ---------- */
+
+  .favorites-list {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-card {
+    width: 100%;
+  }
+
+
+  /* ---------- Forecast ---------- */
+
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .forecast-card {
+    padding: 18px 12px;
+  }
+
+
+  /* ---------- Footer ---------- */
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   Up to 480px
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: 90%;
+  }
+
+
+  /* ---------- Header ---------- */
+
+  .header-content {
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-actions {
+    justify-content: center;
+  }
+
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 32px 0 24px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+
+  /* ---------- Search ---------- */
+
+  .search-form {
+    gap: 10px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+
+  /* ---------- Weather ---------- */
+
+  .weather-main {
+    padding: 20px 16px;
+  }
+
+  .weather-temperature {
+    font-size: 48px;
+  }
+
+  .weather-condition {
+    font-size: 16px;
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .weather-detail {
+    padding: 13px 8px;
+  }
+
+  .weather-detail-value {
+    font-size: 14px;
+  }
+
+  .weather-detail-label {
+    font-size: 11px;
+  }
+
+
+  /* ---------- Forecast ---------- */
+
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-card {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+
+  /* ---------- Sections ---------- */
+
+  .section-title {
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   Up to 360px
+   ========================================= */
+
+@media (max-width: 360px) {
+
+  .container {
+    width: 92%;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .weather-temperature {
+    font-size: 42px;
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+}
+/* =========================================
+   HOURLY FORECAST - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .hourly-list {
+        gap: 12px;
+        padding-bottom: 12px;
+    }
+
+    .hourly-card {
+        flex: 0 0 110px !important;
+        width: 110px;
+        min-width: 110px;
+        padding: 14px 10px;
+    }
+}

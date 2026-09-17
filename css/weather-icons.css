@@ -1,0 +1,303 @@
+/* =========================================================
+   WEATHERPULSE - WEATHER ICONS
+   File: css/weather-icons.css
+   Purpose: Weather condition icons
+   ========================================================= */
+
+
+/* =========================
+   BASE WEATHER ICON
+   ========================= */
+
+.weather-icon {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    user-select: none;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   WEATHER ICON SIZES
+   ========================= */
+
+.weather-icon.large {
+    width: 112px;
+    height: 112px;
+
+    font-size: 4.2rem;
+}
+
+
+.weather-icon.medium {
+    width: 78px;
+    height: 78px;
+
+    font-size: 2.8rem;
+}
+
+
+.weather-icon.small {
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.8rem;
+}
+
+
+/* =========================
+   SVG ICON SUPPORT
+   ========================= */
+
+.weather-icon svg {
+    width: 70%;
+    height: 70%;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+.weather-icon.large svg {
+    width: 76%;
+    height: 76%;
+}
+
+
+.weather-icon.medium svg {
+    width: 72%;
+    height: 72%;
+}
+
+
+.weather-icon.small svg {
+    width: 70%;
+    height: 70%;
+}
+
+
+/* =========================
+   WEATHER ICON ANIMATION
+   ========================= */
+
+.weather-icon svg,
+.weather-icon > span {
+    animation: weatherFloat 3.5s ease-in-out infinite;
+}
+
+
+@keyframes weatherFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* =========================
+   SUN
+   ========================= */
+
+.weather-sunny {
+    position: relative;
+}
+
+
+.weather-sunny::before {
+    content: "☀";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   PARTLY CLOUDY
+   ========================= */
+
+.weather-partly-cloudy {
+    position: relative;
+}
+
+
+.weather-partly-cloudy::before {
+    content: "🌤";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   CLOUDY
+   ========================= */
+
+.weather-cloudy {
+    position: relative;
+}
+
+
+.weather-cloudy::before {
+    content: "☁";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   RAIN
+   ========================= */
+
+.weather-rain {
+    position: relative;
+}
+
+
+.weather-rain::before {
+    content: "🌧";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   HEAVY RAIN
+   ========================= */
+
+.weather-heavy-rain {
+    position: relative;
+}
+
+
+.weather-heavy-rain::before {
+    content: "🌧️";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   THUNDERSTORM
+   ========================= */
+
+.weather-storm {
+    position: relative;
+}
+
+
+.weather-storm::before {
+    content: "⛈";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   SNOW
+   ========================= */
+
+.weather-snow {
+    position: relative;
+}
+
+
+.weather-snow::before {
+    content: "❄";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   MIST / FOG
+   ========================= */
+
+.weather-mist {
+    position: relative;
+}
+
+
+.weather-mist::before {
+    content: "🌫";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   NIGHT
+   ========================= */
+
+.weather-night {
+    position: relative;
+}
+
+
+.weather-night::before {
+    content: "🌙";
+
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   ICON HOVER EFFECT
+   ========================= */
+
+.weather-icon:hover svg,
+.weather-icon:hover > span {
+    animation-play-state: paused;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+.weather-icon[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+
+/* =========================
+   FORECAST ICON
+   ========================= */
+
+.forecast-day .weather-icon {
+    transition: transform 0.25s ease;
+}
+
+
+.forecast-day:hover .weather-icon {
+    transform: translateY(-3px) scale(1.04);
+}
